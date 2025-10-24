@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Leak Maps Gallery</title>
+    <style>
+      :root {
+        --bg: #0b0f14;
+        --panel: #121821;
+        --text: #e9f0f5;
+        --muted: #9fb2c3;
+        --accent: #4cc3ff;
+        --border: #213042;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      }
+      header {
+        padding: 24px 16px 8px;
+        text-align: center;
+      }
+      header h1 {
+        margin: 0 0 8px;
+        font-size: 1.75rem;
+        letter-spacing: 0.3px;
+      }
+      header p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .grid {
+        display: grid;
+        gap: 16px;
+        padding: 16px;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+      @media (min-width: 900px) {
+        .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 360px;
+      }
+      .card header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 14px;
+        background: linear-gradient(180deg, rgba(76,195,255,0.06), transparent);
+        border-bottom: 1px solid var(--border);
+      }
+      .card h2 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      .card .actions a {
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 0.9rem;
+        border: 1px solid var(--accent);
+        padding: 6px 10px;
+        border-radius: 8px;
+      }
+      .frame {
+        flex: 1;
+        min-height: 300px;
+        border: none;
+        width: 100%;
+        background: #0b0f14;
+      }
+      footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.85rem;
+        padding: 16px;
+      }
+      .note {
+        max-width: 980px;
+        margin: 0 auto;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Leak Maps Gallery</h1>
+      <p class="note">Explore four variants: with/without pins and normalized against population.</p>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <header>
+          <h2>Countries (default)</h2>
+          <div class="actions">
+            <a href="Maps/combined/leak_map_countries.html" target="_blank" rel="noopener">Open full page</a>
+          </div>
+        </header>
+        <iframe class="frame" loading="lazy" src="Maps/combined/leak_map_countries.html" title="Leak map - countries"></iframe>
+      </section>
+
+      <section class="card">
+        <header>
+          <h2>Countries (no pins)</h2>
+          <div class="actions">
+            <a href="Maps/combined/leak_map_countries_nopin.html" target="_blank" rel="noopener">Open full page</a>
+          </div>
+        </header>
+        <iframe class="frame" loading="lazy" src="Maps/combined/leak_map_countries_nopin.html" title="Leak map - countries no pins"></iframe>
+      </section>
+
+      <section class="card">
+        <header>
+          <h2>Against population</h2>
+          <div class="actions">
+            <a href="Maps/combined/leak_map_countries_against_pop.html" target="_blank" rel="noopener">Open full page</a>
+          </div>
+        </header>
+        <iframe class="frame" loading="lazy" src="Maps/combined/leak_map_countries_against_pop.html" title="Leak map - against population"></iframe>
+      </section>
+
+      <section class="card">
+        <header>
+          <h2>Against population (no pins)</h2>
+          <div class="actions">
+            <a href="Maps/combined/leak_map_countries_against_pop_nopin.html" target="_blank" rel="noopener">Open full page</a>
+          </div>
+        </header>
+        <iframe class="frame" loading="lazy" src="Maps/combined/leak_map_countries_against_pop_nopin.html" title="Leak map - against population no pins"></iframe>
+      </section>
+    </main>
+
+    <footer>
+      <div class="note">Maps load inside the page for quick comparison. Use “Open full page” to interact full-screen.</div>
+    </footer>
+  </body>
+  </html>

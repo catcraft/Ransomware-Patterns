@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c6d676d91ca580c38bc3884899a449eb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                top: 10px; right: 10px; width: 150px; height: 120px; 
+                background-color: white; border:2px solid grey; z-index:9999; 
+                font-size:14px; padding: 10px">
+    <p><b>Data Leak Severity</b></p>
+    <p><i class="fa fa-circle" style="color:red"></i> Critical (60%+)</p>
+    <p><i class="fa fa-circle" style="color:orange"></i> High (30-60%)</p>
+    <p><i class="fa fa-circle" style="color:yellow"></i> Medium (10-30%)</p>
+    <p><i class="fa fa-circle" style="color:green"></i> Low (0-10%)</p>
+    </div>
+    
+    
+    <h3 align="center" style="font-size:20px"><b>Global Data Leaks by Country</b></h3>
+    
+    
+            <div class="folium-map" id="map_c6d676d91ca580c38bc3884899a449eb" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c6d676d91ca580c38bc3884899a449eb = L.map(
+                "map_c6d676d91ca580c38bc3884899a449eb",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d8379562aba36b25195d6e1bad98f21e = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d8379562aba36b25195d6e1bad98f21e.addTo(map_c6d676d91ca580c38bc3884899a449eb);
+        
+    
+            var circle_marker_c7343c8f73070f033604892a5b36e25f = L.circleMarker(
+                [52.1326, 5.2913],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(map_c6d676d91ca580c38bc3884899a449eb);
+        
+    
+        var popup_ac224abc3c68833e89fe01803d047cd5 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_576490e8eb3557d819474506251b47da = $(`<div id="html_576490e8eb3557d819474506251b47da" style="width: 100.0%; height: 100.0%;">             <b>Netherlands</b><br>             Leaked Domains: 1<br>             Severity: Green             </div>`)[0];
+                popup_ac224abc3c68833e89fe01803d047cd5.setContent(html_576490e8eb3557d819474506251b47da);
+            
+        
+
+        circle_marker_c7343c8f73070f033604892a5b36e25f.bindPopup(popup_ac224abc3c68833e89fe01803d047cd5)
+        ;
+
+        
+    
+    
+            var circle_marker_cd009ca75f9c62dd4da5c04e47fdce75 = L.circleMarker(
+                [56.1304, -106.3468],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(map_c6d676d91ca580c38bc3884899a449eb);
+        
+    
+        var popup_8cde71d2fe0db4d1f7ab96aa6987aabf = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_2d0ce1c5b85998abd10bdb165dd640fa = $(`<div id="html_2d0ce1c5b85998abd10bdb165dd640fa" style="width: 100.0%; height: 100.0%;">             <b>Canada</b><br>             Leaked Domains: 2<br>             Severity: Green             </div>`)[0];
+                popup_8cde71d2fe0db4d1f7ab96aa6987aabf.setContent(html_2d0ce1c5b85998abd10bdb165dd640fa);
+            
+        
+
+        circle_marker_cd009ca75f9c62dd4da5c04e47fdce75.bindPopup(popup_8cde71d2fe0db4d1f7ab96aa6987aabf)
+        ;
+
+        
+    
+    
+            var circle_marker_6f33bc0d61f52ea00f7a7094aeed5fd8 = L.circleMarker(
+                [39.8283, -98.5795],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25.0, "stroke": true, "weight": 2}
+            ).addTo(map_c6d676d91ca580c38bc3884899a449eb);
+        
+    
+        var popup_fd78cec96baee9354cd5e702acf81d0c = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ccf529db8bc73a502472c38bbb89b303 = $(`<div id="html_ccf529db8bc73a502472c38bbb89b303" style="width: 100.0%; height: 100.0%;">             <b>United States</b><br>             Leaked Domains: 40<br>             Severity: Red             </div>`)[0];
+                popup_fd78cec96baee9354cd5e702acf81d0c.setContent(html_ccf529db8bc73a502472c38bbb89b303);
+            
+        
+
+        circle_marker_6f33bc0d61f52ea00f7a7094aeed5fd8.bindPopup(popup_fd78cec96baee9354cd5e702acf81d0c)
+        ;
+
+        
+    
+    
+            var circle_marker_74189f799f9f34f38a3dd59cbfd12815 = L.circleMarker(
+                [60.1282, 18.6435],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(map_c6d676d91ca580c38bc3884899a449eb);
+        
+    
+        var popup_db4f859523e3218b4016e876a7bb2e3a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_5f4bfad0e6feee35a0586c36120e4548 = $(`<div id="html_5f4bfad0e6feee35a0586c36120e4548" style="width: 100.0%; height: 100.0%;">             <b>Sweden</b><br>             Leaked Domains: 1<br>             Severity: Green             </div>`)[0];
+                popup_db4f859523e3218b4016e876a7bb2e3a.setContent(html_5f4bfad0e6feee35a0586c36120e4548);
+            
+        
+
+        circle_marker_74189f799f9f34f38a3dd59cbfd12815.bindPopup(popup_db4f859523e3218b4016e876a7bb2e3a)
+        ;
+
+        
+    
+    
+            var circle_marker_d2ed890db2dd66de9cd6b68efdc13436 = L.circleMarker(
+                [41.8719, 12.5674],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(map_c6d676d91ca580c38bc3884899a449eb);
+        
+    
+        var popup_4e84bcf8b5ea286628a240992aeb1ec8 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_77f109cd8abb1daba84f111d76055210 = $(`<div id="html_77f109cd8abb1daba84f111d76055210" style="width: 100.0%; height: 100.0%;">             <b>Italy</b><br>             Leaked Domains: 1<br>             Severity: Green             </div>`)[0];
+                popup_4e84bcf8b5ea286628a240992aeb1ec8.setContent(html_77f109cd8abb1daba84f111d76055210);
+            
+        
+
+        circle_marker_d2ed890db2dd66de9cd6b68efdc13436.bindPopup(popup_4e84bcf8b5ea286628a240992aeb1ec8)
+        ;
+
+        
+    
+    
+            var circle_marker_a5249974877b07b36b9e8cfd74bdb166 = L.circleMarker(
+                [61.9241, 25.7482],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 2}
+            ).addTo(map_c6d676d91ca580c38bc3884899a449eb);
+        
+    
+        var popup_e41fc7743de64316633ea1e47d32a4ca = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3142247c257df428bec3e2aa74eee926 = $(`<div id="html_3142247c257df428bec3e2aa74eee926" style="width: 100.0%; height: 100.0%;">             <b>Finland</b><br>             Leaked Domains: 3<br>             Severity: Green             </div>`)[0];
+                popup_e41fc7743de64316633ea1e47d32a4ca.setContent(html_3142247c257df428bec3e2aa74eee926);
+            
+        
+
+        circle_marker_a5249974877b07b36b9e8cfd74bdb166.bindPopup(popup_e41fc7743de64316633ea1e47d32a4ca)
+        ;
+
+        
+    
+    
+            var circle_marker_585c24cd177d8945e21294f548dd7b74 = L.circleMarker(
+                [51.1657, 10.4515],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(map_c6d676d91ca580c38bc3884899a449eb);
+        
+    
+        var popup_3f3f248efc77f40bd92c69b8f3d6cb53 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_0fa53936f3aa033552f4a41e02604eb1 = $(`<div id="html_0fa53936f3aa033552f4a41e02604eb1" style="width: 100.0%; height: 100.0%;">             <b>Germany</b><br>             Leaked Domains: 1<br>             Severity: Green             </div>`)[0];
+                popup_3f3f248efc77f40bd92c69b8f3d6cb53.setContent(html_0fa53936f3aa033552f4a41e02604eb1);
+            
+        
+
+        circle_marker_585c24cd177d8945e21294f548dd7b74.bindPopup(popup_3f3f248efc77f40bd92c69b8f3d6cb53)
+        ;
+
+        
+    
+    
+            var circle_marker_ee291aac99bd014c5cd13c9d874cad0d = L.circleMarker(
+                [-25.2744, 133.7751],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 2}
+            ).addTo(map_c6d676d91ca580c38bc3884899a449eb);
+        
+    
+        var popup_a0b28f27a7926b0b6850b7952c02d135 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_38d9fcaadc522a440f38574dbf959281 = $(`<div id="html_38d9fcaadc522a440f38574dbf959281" style="width: 100.0%; height: 100.0%;">             <b>Australia</b><br>             Leaked Domains: 3<br>             Severity: Green             </div>`)[0];
+                popup_a0b28f27a7926b0b6850b7952c02d135.setContent(html_38d9fcaadc522a440f38574dbf959281);
+            
+        
+
+        circle_marker_ee291aac99bd014c5cd13c9d874cad0d.bindPopup(popup_a0b28f27a7926b0b6850b7952c02d135)
+        ;
+
+        
+    
+    
+            var circle_marker_cc348d29ec82be3ed3434d2a4c275f11 = L.circleMarker(
+                [-14.235, -51.9253],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(map_c6d676d91ca580c38bc3884899a449eb);
+        
+    
+        var popup_4c2ba880bf1441ff094e7c5fe8fad1c2 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9018d85b441d7d00be81cb71efc2725d = $(`<div id="html_9018d85b441d7d00be81cb71efc2725d" style="width: 100.0%; height: 100.0%;">             <b>Brazil</b><br>             Leaked Domains: 1<br>             Severity: Green             </div>`)[0];
+                popup_4c2ba880bf1441ff094e7c5fe8fad1c2.setContent(html_9018d85b441d7d00be81cb71efc2725d);
+            
+        
+
+        circle_marker_cc348d29ec82be3ed3434d2a4c275f11.bindPopup(popup_4c2ba880bf1441ff094e7c5fe8fad1c2)
+        ;
+
+        
+    
+    
+            var circle_marker_eb8734839c3de1265e8aeced5bd35a57 = L.circleMarker(
+                [55.3781, -3.436],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.5, "stroke": true, "weight": 2}
+            ).addTo(map_c6d676d91ca580c38bc3884899a449eb);
+        
+    
+        var popup_d8995c04881316c69549a4ed264c2f5c = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_2c2ddf2c53d757ba518fd906f775367a = $(`<div id="html_2c2ddf2c53d757ba518fd906f775367a" style="width: 100.0%; height: 100.0%;">             <b>United Kingdom</b><br>             Leaked Domains: 5<br>             Severity: Yellow             </div>`)[0];
+                popup_d8995c04881316c69549a4ed264c2f5c.setContent(html_2c2ddf2c53d757ba518fd906f775367a);
+            
+        
+
+        circle_marker_eb8734839c3de1265e8aeced5bd35a57.bindPopup(popup_d8995c04881316c69549a4ed264c2f5c)
+        ;
+
+        
+    
+    
+            var circle_marker_aebc2b16155f94cbb96c86cef86db30a = L.circleMarker(
+                [1.3521, 103.8198],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(map_c6d676d91ca580c38bc3884899a449eb);
+        
+    
+        var popup_2afe67b9fdc1e885177975c610d58bf4 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_06988357db5dcf3610c4857be62add37 = $(`<div id="html_06988357db5dcf3610c4857be62add37" style="width: 100.0%; height: 100.0%;">             <b>Singapore</b><br>             Leaked Domains: 1<br>             Severity: Green             </div>`)[0];
+                popup_2afe67b9fdc1e885177975c610d58bf4.setContent(html_06988357db5dcf3610c4857be62add37);
+            
+        
+
+        circle_marker_aebc2b16155f94cbb96c86cef86db30a.bindPopup(popup_2afe67b9fdc1e885177975c610d58bf4)
+        ;
+
+        
+    
+    
+            var circle_marker_51879e73e50e5e66afca728952c6fa41 = L.circleMarker(
+                [40.4637, -3.7492],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(map_c6d676d91ca580c38bc3884899a449eb);
+        
+    
+        var popup_b3f77aba92aaa196ef79fbe95fb9c152 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_cc9ec3cfa3e3184ee405b8d0c3ab3e61 = $(`<div id="html_cc9ec3cfa3e3184ee405b8d0c3ab3e61" style="width: 100.0%; height: 100.0%;">             <b>Spain</b><br>             Leaked Domains: 2<br>             Severity: Green             </div>`)[0];
+                popup_b3f77aba92aaa196ef79fbe95fb9c152.setContent(html_cc9ec3cfa3e3184ee405b8d0c3ab3e61);
+            
+        
+
+        circle_marker_51879e73e50e5e66afca728952c6fa41.bindPopup(popup_b3f77aba92aaa196ef79fbe95fb9c152)
+        ;
+
+        
+    
+    
+            var circle_marker_816deb561489e1861346bf67e0232fc3 = L.circleMarker(
+                [46.2276, 2.2137],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 2}
+            ).addTo(map_c6d676d91ca580c38bc3884899a449eb);
+        
+    
+        var popup_039544b20a5c9046fb09ff5b233bdf95 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_816480c8c964129f78d081c2ae5bb3a8 = $(`<div id="html_816480c8c964129f78d081c2ae5bb3a8" style="width: 100.0%; height: 100.0%;">             <b>France</b><br>             Leaked Domains: 3<br>             Severity: Green             </div>`)[0];
+                popup_039544b20a5c9046fb09ff5b233bdf95.setContent(html_816480c8c964129f78d081c2ae5bb3a8);
+            
+        
+
+        circle_marker_816deb561489e1861346bf67e0232fc3.bindPopup(popup_039544b20a5c9046fb09ff5b233bdf95)
+        ;
+
+        
+    
+    
+            var circle_marker_421d61c70cd09df6a0712ac375daa9e9 = L.circleMarker(
+                [23.6345, -102.5528],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(map_c6d676d91ca580c38bc3884899a449eb);
+        
+    
+        var popup_23a77c30c85440d21e2182a305223797 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c070bb413b96ae1b30647982e7b35ea5 = $(`<div id="html_c070bb413b96ae1b30647982e7b35ea5" style="width: 100.0%; height: 100.0%;">             <b>Mexico</b><br>             Leaked Domains: 1<br>             Severity: Green             </div>`)[0];
+                popup_23a77c30c85440d21e2182a305223797.setContent(html_c070bb413b96ae1b30647982e7b35ea5);
+            
+        
+
+        circle_marker_421d61c70cd09df6a0712ac375daa9e9.bindPopup(popup_23a77c30c85440d21e2182a305223797)
+        ;
+
+        
+    
+    
+            var circle_marker_6a05ea9f6d88786a923c14c02958dbde = L.circleMarker(
+                [4.2105, 101.9758],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 2}
+            ).addTo(map_c6d676d91ca580c38bc3884899a449eb);
+        
+    
+        var popup_d00ee644a8088bd78059a61f535f55b5 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_0b993e6151cf4f10e1fffed69f7f0a41 = $(`<div id="html_0b993e6151cf4f10e1fffed69f7f0a41" style="width: 100.0%; height: 100.0%;">             <b>Malaysia</b><br>             Leaked Domains: 1<br>             Severity: Green             </div>`)[0];
+                popup_d00ee644a8088bd78059a61f535f55b5.setContent(html_0b993e6151cf4f10e1fffed69f7f0a41);
+            
+        
+
+        circle_marker_6a05ea9f6d88786a923c14c02958dbde.bindPopup(popup_d00ee644a8088bd78059a61f535f55b5)
+        ;
+
+        
+    
+</script>
+</html>

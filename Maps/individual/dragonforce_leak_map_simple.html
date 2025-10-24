@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1bc7228a5564ab055b1c71ab20b09183 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                top: 10px; right: 10px; width: 150px; height: 120px; 
+                background-color: white; border:2px solid grey; z-index:9999; 
+                font-size:14px; padding: 10px">
+    <p><b>DragonForce Breach Severity</b></p>
+    <p><i class="fa fa-circle" style="color:red"></i> Critical (60%+)</p>
+    <p><i class="fa fa-circle" style="color:orange"></i> High (30-60%)</p>
+    <p><i class="fa fa-circle" style="color:yellow"></i> Medium (10-30%)</p>
+    <p><i class="fa fa-circle" style="color:green"></i> Low (0-10%)</p>
+    </div>
+    
+    
+    <h3 align="center" style="font-size:20px"><b>DragonForce Breaches by Country</b></h3>
+    
+    
+            <div class="folium-map" id="map_1bc7228a5564ab055b1c71ab20b09183" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1bc7228a5564ab055b1c71ab20b09183 = L.map(
+                "map_1bc7228a5564ab055b1c71ab20b09183",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9f32160384461e94ddaa81c6766f0d48 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_9f32160384461e94ddaa81c6766f0d48.addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+            var circle_marker_b53fadbcfa495de70f6c1354a9dbc886 = L.circleMarker(
+                [-38.4161, -63.6167],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.333333333333333, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_ff895ca6008aa66b3fbe878d2d64f1a1 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_78200a1478019e9e9b31c96aa888c1ec = $(`<div id="html_78200a1478019e9e9b31c96aa888c1ec" style="width: 100.0%; height: 100.0%;">             <b>Argentina</b><br>             Breached Companies: 1<br>             Severity: Green             </div>`)[0];
+                popup_ff895ca6008aa66b3fbe878d2d64f1a1.setContent(html_78200a1478019e9e9b31c96aa888c1ec);
+            
+        
+
+        circle_marker_b53fadbcfa495de70f6c1354a9dbc886.bindPopup(popup_ff895ca6008aa66b3fbe878d2d64f1a1)
+        ;
+
+        
+    
+    
+            var circle_marker_e1a78ec00ee4e00959e684cf3f215b0a = L.circleMarker(
+                [55.3781, -3.436],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_4ceaf9c7eb89290c7da01d4d2e1b948c = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_6e12becaf588fc490258b3fc727a5e6b = $(`<div id="html_6e12becaf588fc490258b3fc727a5e6b" style="width: 100.0%; height: 100.0%;">             <b>United Kingdom</b><br>             Breached Companies: 9<br>             Severity: Yellow             </div>`)[0];
+                popup_4ceaf9c7eb89290c7da01d4d2e1b948c.setContent(html_6e12becaf588fc490258b3fc727a5e6b);
+            
+        
+
+        circle_marker_e1a78ec00ee4e00959e684cf3f215b0a.bindPopup(popup_4ceaf9c7eb89290c7da01d4d2e1b948c)
+        ;
+
+        
+    
+    
+            var circle_marker_b2079da7d763bedbf58eb212ecf3b9d3 = L.circleMarker(
+                [-25.2744, 133.7751],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_a9f7d0f8ff8b54506aaeedbb5efc8d2b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3e81a4ba2e06f05d4ebfc37c5c2235cd = $(`<div id="html_3e81a4ba2e06f05d4ebfc37c5c2235cd" style="width: 100.0%; height: 100.0%;">             <b>Australia</b><br>             Breached Companies: 3<br>             Severity: Green             </div>`)[0];
+                popup_a9f7d0f8ff8b54506aaeedbb5efc8d2b.setContent(html_3e81a4ba2e06f05d4ebfc37c5c2235cd);
+            
+        
+
+        circle_marker_b2079da7d763bedbf58eb212ecf3b9d3.bindPopup(popup_a9f7d0f8ff8b54506aaeedbb5efc8d2b)
+        ;
+
+        
+    
+    
+            var circle_marker_945ac7fbece23899836966a027eb086e = L.circleMarker(
+                [46.8182, 8.2275],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.666666666666667, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_9cf5e4ed9925eb180934b8b4c16a22c3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_dde87f60d8977734f38c3d545092f3b1 = $(`<div id="html_dde87f60d8977734f38c3d545092f3b1" style="width: 100.0%; height: 100.0%;">             <b>Switzerland</b><br>             Breached Companies: 2<br>             Severity: Green             </div>`)[0];
+                popup_9cf5e4ed9925eb180934b8b4c16a22c3.setContent(html_dde87f60d8977734f38c3d545092f3b1);
+            
+        
+
+        circle_marker_945ac7fbece23899836966a027eb086e.bindPopup(popup_9cf5e4ed9925eb180934b8b4c16a22c3)
+        ;
+
+        
+    
+    
+            var circle_marker_c89a6f2c60f491340f4eae5cf396cde6 = L.circleMarker(
+                [51.1657, 10.4515],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.0, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_568faaed6f277a1214ea9339e022c270 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_96e9e986585a9c895d2b86853e7964af = $(`<div id="html_96e9e986585a9c895d2b86853e7964af" style="width: 100.0%; height: 100.0%;">             <b>Germany</b><br>             Breached Companies: 12<br>             Severity: Yellow             </div>`)[0];
+                popup_568faaed6f277a1214ea9339e022c270.setContent(html_96e9e986585a9c895d2b86853e7964af);
+            
+        
+
+        circle_marker_c89a6f2c60f491340f4eae5cf396cde6.bindPopup(popup_568faaed6f277a1214ea9339e022c270)
+        ;
+
+        
+    
+    
+            var circle_marker_16afc8cdc1de3c10db16dcfd665c8a45 = L.circleMarker(
+                [6.4238, -66.5897],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.333333333333333, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_dfeb67b9339052c8e8aec3daf4f78c31 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ca4ee1a0664104d1508d0a146bf2b63f = $(`<div id="html_ca4ee1a0664104d1508d0a146bf2b63f" style="width: 100.0%; height: 100.0%;">             <b>Venezuela</b><br>             Breached Companies: 1<br>             Severity: Green             </div>`)[0];
+                popup_dfeb67b9339052c8e8aec3daf4f78c31.setContent(html_ca4ee1a0664104d1508d0a146bf2b63f);
+            
+        
+
+        circle_marker_16afc8cdc1de3c10db16dcfd665c8a45.bindPopup(popup_dfeb67b9339052c8e8aec3daf4f78c31)
+        ;
+
+        
+    
+    
+            var circle_marker_2eeaa3ffca4a2c261a730323e3ed035f = L.circleMarker(
+                [40.4637, -3.7492],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.333333333333333, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_e41078c4222dd713a145c817d28c3452 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d4a1e908eb8b5b6a9001217ff5fee17e = $(`<div id="html_d4a1e908eb8b5b6a9001217ff5fee17e" style="width: 100.0%; height: 100.0%;">             <b>Spain</b><br>             Breached Companies: 1<br>             Severity: Green             </div>`)[0];
+                popup_e41078c4222dd713a145c817d28c3452.setContent(html_d4a1e908eb8b5b6a9001217ff5fee17e);
+            
+        
+
+        circle_marker_2eeaa3ffca4a2c261a730323e3ed035f.bindPopup(popup_e41078c4222dd713a145c817d28c3452)
+        ;
+
+        
+    
+    
+            var circle_marker_48ccec4bd0636572e17fc48e3c4e5601 = L.circleMarker(
+                [39.8283, -98.5795],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.0, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_fc77505cc97d5ace70c3a28d64ba096c = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_352686084e5f7bc77d718deed1aab9f9 = $(`<div id="html_352686084e5f7bc77d718deed1aab9f9" style="width: 100.0%; height: 100.0%;">             <b>United States</b><br>             Breached Companies: 42<br>             Severity: Red             </div>`)[0];
+                popup_fc77505cc97d5ace70c3a28d64ba096c.setContent(html_352686084e5f7bc77d718deed1aab9f9);
+            
+        
+
+        circle_marker_48ccec4bd0636572e17fc48e3c4e5601.bindPopup(popup_fc77505cc97d5ace70c3a28d64ba096c)
+        ;
+
+        
+    
+    
+            var circle_marker_b4de49afca63b16b566abffaf9c60c70 = L.circleMarker(
+                [46.2276, 2.2137],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_cda283b3e4d140d2266ea9ce4e156c09 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e69dec33127b7adddf89a9b3a87351af = $(`<div id="html_e69dec33127b7adddf89a9b3a87351af" style="width: 100.0%; height: 100.0%;">             <b>France</b><br>             Breached Companies: 3<br>             Severity: Green             </div>`)[0];
+                popup_cda283b3e4d140d2266ea9ce4e156c09.setContent(html_e69dec33127b7adddf89a9b3a87351af);
+            
+        
+
+        circle_marker_b4de49afca63b16b566abffaf9c60c70.bindPopup(popup_cda283b3e4d140d2266ea9ce4e156c09)
+        ;
+
+        
+    
+    
+            var circle_marker_4b00c654461959b246c8c82c2236cce6 = L.circleMarker(
+                [39.3999, -8.2245],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.333333333333333, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_df02aada36e87fb6396e1c0fc5563b69 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_2e0961bf98b39119c4c4c500c8c415a9 = $(`<div id="html_2e0961bf98b39119c4c4c500c8c415a9" style="width: 100.0%; height: 100.0%;">             <b>Portugal</b><br>             Breached Companies: 1<br>             Severity: Green             </div>`)[0];
+                popup_df02aada36e87fb6396e1c0fc5563b69.setContent(html_2e0961bf98b39119c4c4c500c8c415a9);
+            
+        
+
+        circle_marker_4b00c654461959b246c8c82c2236cce6.bindPopup(popup_df02aada36e87fb6396e1c0fc5563b69)
+        ;
+
+        
+    
+    
+            var circle_marker_22b041bc422ff4a9bb73b37a3677f3cc = L.circleMarker(
+                [-0.7893, 113.9213],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.666666666666667, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_efebbe0470313b2a2848b527f433f436 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_26c79d2e2c6baf9af5d150bddf985fab = $(`<div id="html_26c79d2e2c6baf9af5d150bddf985fab" style="width: 100.0%; height: 100.0%;">             <b>Indonesia</b><br>             Breached Companies: 2<br>             Severity: Green             </div>`)[0];
+                popup_efebbe0470313b2a2848b527f433f436.setContent(html_26c79d2e2c6baf9af5d150bddf985fab);
+            
+        
+
+        circle_marker_22b041bc422ff4a9bb73b37a3677f3cc.bindPopup(popup_efebbe0470313b2a2848b527f433f436)
+        ;
+
+        
+    
+    
+            var circle_marker_07a918fdf7899247a83edcfcccc323cf = L.circleMarker(
+                [-14.235, -51.9253],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.333333333333333, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_2e973949e4ae6338119f56144c342bf0 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f3d58cce62f1befff4e9dbe4840f0879 = $(`<div id="html_f3d58cce62f1befff4e9dbe4840f0879" style="width: 100.0%; height: 100.0%;">             <b>Brazil</b><br>             Breached Companies: 1<br>             Severity: Green             </div>`)[0];
+                popup_2e973949e4ae6338119f56144c342bf0.setContent(html_f3d58cce62f1befff4e9dbe4840f0879);
+            
+        
+
+        circle_marker_07a918fdf7899247a83edcfcccc323cf.bindPopup(popup_2e973949e4ae6338119f56144c342bf0)
+        ;
+
+        
+    
+    
+            var circle_marker_3ae3d7b4edfd219449acd12efd1ac0d6 = L.circleMarker(
+                [41.8719, 12.5674],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.0, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_369f9290079f9d61589ffe95977f4663 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_997b4f961c3e011aa07099f56ab64142 = $(`<div id="html_997b4f961c3e011aa07099f56ab64142" style="width: 100.0%; height: 100.0%;">             <b>Italy</b><br>             Breached Companies: 3<br>             Severity: Green             </div>`)[0];
+                popup_369f9290079f9d61589ffe95977f4663.setContent(html_997b4f961c3e011aa07099f56ab64142);
+            
+        
+
+        circle_marker_3ae3d7b4edfd219449acd12efd1ac0d6.bindPopup(popup_369f9290079f9d61589ffe95977f4663)
+        ;
+
+        
+    
+    
+            var circle_marker_1a3af4ee86cab6600bf66d793f98d72b = L.circleMarker(
+                [23.4241, 53.8478],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.333333333333333, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_3a15655878c9d1183470f47c32445547 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_75505cee8ea30eb0a4e85ef801af8636 = $(`<div id="html_75505cee8ea30eb0a4e85ef801af8636" style="width: 100.0%; height: 100.0%;">             <b>United Arab Emirates</b><br>             Breached Companies: 1<br>             Severity: Green             </div>`)[0];
+                popup_3a15655878c9d1183470f47c32445547.setContent(html_75505cee8ea30eb0a4e85ef801af8636);
+            
+        
+
+        circle_marker_1a3af4ee86cab6600bf66d793f98d72b.bindPopup(popup_3a15655878c9d1183470f47c32445547)
+        ;
+
+        
+    
+    
+            var circle_marker_4fa0bc8995efff9d32921a3c01dd85fd = L.circleMarker(
+                [22.3193, 114.1694],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.666666666666667, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_150d7b736eb4ba775f0f1a63ed29f72b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d9bfccbab41a21ba012a594dc6dac737 = $(`<div id="html_d9bfccbab41a21ba012a594dc6dac737" style="width: 100.0%; height: 100.0%;">             <b>Hong Kong</b><br>             Breached Companies: 2<br>             Severity: Green             </div>`)[0];
+                popup_150d7b736eb4ba775f0f1a63ed29f72b.setContent(html_d9bfccbab41a21ba012a594dc6dac737);
+            
+        
+
+        circle_marker_4fa0bc8995efff9d32921a3c01dd85fd.bindPopup(popup_150d7b736eb4ba775f0f1a63ed29f72b)
+        ;
+
+        
+    
+    
+            var circle_marker_bf110a23509eae6ee3f80bc668cdaac2 = L.circleMarker(
+                [60.1282, 18.6435],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.333333333333333, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_ad7bab80bd100f2dad00d119779da217 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_0ddeaca749ceb8922ace4324415b59ea = $(`<div id="html_0ddeaca749ceb8922ace4324415b59ea" style="width: 100.0%; height: 100.0%;">             <b>Sweden</b><br>             Breached Companies: 1<br>             Severity: Green             </div>`)[0];
+                popup_ad7bab80bd100f2dad00d119779da217.setContent(html_0ddeaca749ceb8922ace4324415b59ea);
+            
+        
+
+        circle_marker_bf110a23509eae6ee3f80bc668cdaac2.bindPopup(popup_ad7bab80bd100f2dad00d119779da217)
+        ;
+
+        
+    
+    
+            var circle_marker_aa0cd89a6c4e8cdc5510c3803c4fca42 = L.circleMarker(
+                [26.0975, 31.2357],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.333333333333333, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_558b0bb743545c8d7890b83c649d5c57 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ccadf82327d01612425587b1582ba4ea = $(`<div id="html_ccadf82327d01612425587b1582ba4ea" style="width: 100.0%; height: 100.0%;">             <b>Egypt</b><br>             Breached Companies: 1<br>             Severity: Green             </div>`)[0];
+                popup_558b0bb743545c8d7890b83c649d5c57.setContent(html_ccadf82327d01612425587b1582ba4ea);
+            
+        
+
+        circle_marker_aa0cd89a6c4e8cdc5510c3803c4fca42.bindPopup(popup_558b0bb743545c8d7890b83c649d5c57)
+        ;
+
+        
+    
+    
+            var circle_marker_3cbb9b99dd031e524f3b51d88ea58dbc = L.circleMarker(
+                [23.8859, 45.0792],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.333333333333333, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_d5452c69717bca323415d041a8187105 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_097c1b402a3ad8eee2cec06cee49adef = $(`<div id="html_097c1b402a3ad8eee2cec06cee49adef" style="width: 100.0%; height: 100.0%;">             <b>Saudi Arabia</b><br>             Breached Companies: 1<br>             Severity: Green             </div>`)[0];
+                popup_d5452c69717bca323415d041a8187105.setContent(html_097c1b402a3ad8eee2cec06cee49adef);
+            
+        
+
+        circle_marker_3cbb9b99dd031e524f3b51d88ea58dbc.bindPopup(popup_d5452c69717bca323415d041a8187105)
+        ;
+
+        
+    
+    
+            var circle_marker_7a7c327be8ae778bddbc3ff89f18a3ee = L.circleMarker(
+                [-40.9006, 174.886],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.333333333333333, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_8a657ea0c6935ef0080551b7fd220dcf = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_75626fb9711e6096d83b02478510caf2 = $(`<div id="html_75626fb9711e6096d83b02478510caf2" style="width: 100.0%; height: 100.0%;">             <b>New Zealand</b><br>             Breached Companies: 1<br>             Severity: Green             </div>`)[0];
+                popup_8a657ea0c6935ef0080551b7fd220dcf.setContent(html_75626fb9711e6096d83b02478510caf2);
+            
+        
+
+        circle_marker_7a7c327be8ae778bddbc3ff89f18a3ee.bindPopup(popup_8a657ea0c6935ef0080551b7fd220dcf)
+        ;
+
+        
+    
+    
+            var circle_marker_b36c11349a6d432cd862d7fd17f1a7e9 = L.circleMarker(
+                [60.472, 8.4689],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.333333333333333, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_2e3a995337e97503f118f56ebe6b66af = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_dfd127dd5aa0b009e032d949bcc28f3d = $(`<div id="html_dfd127dd5aa0b009e032d949bcc28f3d" style="width: 100.0%; height: 100.0%;">             <b>Norway</b><br>             Breached Companies: 1<br>             Severity: Green             </div>`)[0];
+                popup_2e3a995337e97503f118f56ebe6b66af.setContent(html_dfd127dd5aa0b009e032d949bcc28f3d);
+            
+        
+
+        circle_marker_b36c11349a6d432cd862d7fd17f1a7e9.bindPopup(popup_2e3a995337e97503f118f56ebe6b66af)
+        ;
+
+        
+    
+    
+            var circle_marker_e74f7a882fef03eb32e1fdb8e210dbe7 = L.circleMarker(
+                [56.2639, 9.5018],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.333333333333333, "stroke": true, "weight": 2}
+            ).addTo(map_1bc7228a5564ab055b1c71ab20b09183);
+        
+    
+        var popup_7f57579196ad2075147daf12d534eced = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_85b54312be77be51c065688a43a02e3e = $(`<div id="html_85b54312be77be51c065688a43a02e3e" style="width: 100.0%; height: 100.0%;">             <b>Denmark</b><br>             Breached Companies: 1<br>             Severity: Green             </div>`)[0];
+                popup_7f57579196ad2075147daf12d534eced.setContent(html_85b54312be77be51c065688a43a02e3e);
+            
+        
+
+        circle_marker_e74f7a882fef03eb32e1fdb8e210dbe7.bindPopup(popup_7f57579196ad2075147daf12d534eced)
+        ;
+
+        
+    
+</script>
+</html>
