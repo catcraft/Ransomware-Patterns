@@ -49,12 +49,9 @@ Population-normalized view:
 
 ![Leak map vs population](img/pop_nopin.png)
 
-Open live examples (HTML):
+Live examples (Github Pages):
 
-- `Maps/combined/leak_map_countries.html`
-- `Maps/combined/leak_map_countries_against_pop.html`
-- `Maps/individual/leak_map_countries_lockbit.html`
-- `Maps/individual/leak_map_countries_dragonforce.html`
+- https://catcraft.github.io/Ransomware-Patterns/
 
 ## Reproducibility (how to run)
 
@@ -111,4 +108,5 @@ AI was used heavily in this write-up and the development of the tools:
 ## Credits
 - GeoJSON: https://geojson.org/
 - World Population: https://data.worldbank.org/indicator/SP.POP.TOTL
+
 - Group Info: https://www.ransomlook.io/recent
